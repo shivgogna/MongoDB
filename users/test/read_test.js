@@ -17,4 +17,12 @@ describe('Reading users out of the databse', () => {
                 done();
             })
     });
+
+    it('find a user with a particular id', (done) => {
+        User.findOne({ _id: shiv._id })
+            .then((user) => {
+                assert(user.name === 'Shiv');
+                done();
+            });
+    });
 });
